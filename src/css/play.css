@@ -1,0 +1,84 @@
+/*
+ * https://liuhongwei3.github.io Inc.
+ * Name: play.css
+ * Date: 2020/5/24 下午12:32
+ * Author: Tadm
+ * Copyright (c) 2020 All Rights Reserved.
+ */
+
+.play-icon {
+    width: 70vw;
+    height: 8vh;
+    color: #ffffff;
+    background-color: #ccc0af;
+    display: flex;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 666;
+    left: -66vw;
+    bottom: 20px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.play-icon i, .current-time, .duration, .pg-btm {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+.pg-btm {
+    flex: 5;
+    margin: 0 1vw;
+    position: relative;
+    justify-content: left;
+}
+
+.progressBtm, .progressTop {
+    height: 5px;
+    border-radius: 6px;
+    position: absolute;
+}
+
+.progressTop {
+    float: left;
+    background-color: #ffd9ce;
+    z-index: 2;
+}
+
+#progress {
+    z-index: 5;
+    font-size: 0.6em;
+    position: absolute;
+}
+
+#progress:hover {
+    font-size: 0.75em;
+}
+
+.progressBtm {
+    width: 100%;
+    background-color: #cecece;
+    z-index: 1;
+}
+
+.pg-btm:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .play-icon {
+        width: 100vw;
+        left: -90vw;
+    }
+
+    .pg-btm {
+        flex: 2;
+    }
+
+    i, .current-time, .duration {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,66 @@
+/*
+ * https://liuhongwei3.github.io Inc.
+ * Name: CoverLyric.css
+ * Date: 2020/5/24 下午12:32
+ * Author: Tadm
+ * Copyright (c) 2020 All Rights Reserved.
+ */
+
+#cover-lyric {
+    display: flex;
+    position: sticky;
+    top: 9vh;
+    height: 34vh;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.left, .right {
+    padding: 20px 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.left {
+    flex: 1 40%;
+}
+
+.left img {
+    border-radius: 50%;
+    animation: imgRotate 6s linear infinite normal;
+    position: relative;
+    z-index: 2;
+}
+
+.right {
+    flex: 1 60%;
+    transition: transform 0.6s ease-in-out;
+    top: 18vh;
+}
+
+.inner {
+    height: 30vh;
+    overflow: hidden;
+}
+
+@keyframes imgRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.lyrics {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.active-lyric {
+    /*color: #ff1d3f;*/
+    color: transparent;
+    background: linear-gradient(to right, #00aaff, greenyellow);
+    -webkit-background-clip: text;
+    font-weight: bolder;
+}

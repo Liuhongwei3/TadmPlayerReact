@@ -1,0 +1,263 @@
+/*
+ * https://liuhongwei3.github.io Inc.
+ * Name: App.css
+ * Date: 2020/5/24 下午12:32
+ * Author: Tadm
+ * Copyright (c) 2020 All Rights Reserved.
+ */
+
+@import '~antd/dist/antd.css';
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background-color: #282c34;
+    min-height: 100vh;
+    font-size: calc(10px + 1vmin);
+    color: #dcdcdc;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border-radius: 10%;
+}
+
+img:hover {
+    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+/*
+    重写滚动条样式
+ */
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/*  滑块部分  */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/*  剩余部分  */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.left img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20%;
+    margin: 10px;
+    opacity: 0.75;
+}
+
+#top, .nav-header, #cover-lyric {
+    z-index: 9;
+}
+
+#top {
+    position: sticky;
+    top: 0;
+    background: rgb(70, 70, 66);
+    min-height: 4vh;
+    color: #5af3d0fa;
+    margin: 0;
+}
+
+.nav-header {
+    position: sticky;
+    top: 4vh;
+    min-height: 5vh;
+    background: rgb(90, 90, 90);
+    font-size: calc(6px + 1vmin);
+}
+
+.container {
+    height: 56vh;
+    overflow-y: scroll;
+}
+
+.ant-menu-horizontal > .ant-menu-item a {
+    color: rgba(0, 255, 153, 0.8);
+}
+
+.myId {
+    color: #459efe;
+}
+
+.user-login-card {
+    width: 60vw;
+    color: #13c2c2;
+    margin: 0 auto;
+    background-color: rgba(111, 111, 111, 0.45);
+}
+
+.user-login-card div {
+    margin: 10px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+/*
+    override antd style
+ */
+
+.ant-collapse {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.ant-collapse-header {
+    background-color: #c7c6c6;
+}
+
+.ant-collapse-content {
+    color: #ef788d;
+    background-color: #e8e4e4;
+}
+
+.ant-table {
+    color: #dcdcdc;
+    background-color: #252525;
+    margin: 15px;
+}
+
+.ant-table-thead > tr > th {
+    color: #dcdcdc;
+    background-color: #1a1a1a;
+}
+
+.ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+    background-color: #404040 !important;
+}
+
+.ant-tag {
+    margin: 8px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.ant-alert {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.ant-card-head-title {
+    color: white;
+}
+
+.ant-menu-submenu-inline {
+    color: aqua;
+}
+
+.ant-input {
+    width: 30vw;
+}
+
+.ant-pagination-item-ellipsis {
+    color: white;
+}
+
+.ant-table-pagination.ant-pagination {
+    margin: 16px;
+}
+
+.ant-menu-submenu-title span {
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .left img {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+    }
+
+    .ant-tag {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .user-login-card {
+        width: 90vw;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+#about {
+    padding: 0 10px;
+}
+
+@keyframes heartAnimate {
+    0%, 100% {
+        transform: scale(1);
+    }
+    /*0%,100%时保持图形的原大小*/
+    10%, 30% {
+        transform: scale(0.9);
+    }
+    /*10%,30%时图形缩小成0.9倍*/
+    20%, 40%, 60%, 80% {
+        transform: scale(1.1);
+    }
+    /*20%,40%,60%,80%时图形扩大成1.1倍*/
+    50%, 70% {
+        transform: scale(1.1);
+    }
+    /*50%,70%时图形扩大成1.1倍*/
+}
+
+#myheart {
+    color: #f1635e;
+    animation: heartAnimate 1s infinite;
+}
+
+
+.LazyLoad {
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+
+.test {
+    height: 300px;
+}
+
+.filler {
+    height: 150px;
+}
+
+.ScrollableContainer {
+    height: 200px;
+    overflow: scroll;
+    background-color: grey;
+}
