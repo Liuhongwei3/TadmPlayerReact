@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {message} from 'antd';
+import {message,Tooltip} from 'antd';
 
 import '../css/CoverLyric.css'
 import {musicDetail, musicLyric} from "../network/ReqUrl";
@@ -41,8 +41,12 @@ class CoverLyric extends Component {
         <div id="cover-lyric" style={backGround}>
           <div className="left">
             <img alt="cover" src={this.state.cover}/>
-            <div>{this.state.name}</div>
-            <div>{this.state.singer}</div>
+            <Tooltip title="歌曲名" placement="right">
+              <div>{this.state.name}</div>
+            </Tooltip>
+            <Tooltip title="歌手" placement="bottom">
+              <div>{this.state.singer}</div>
+            </Tooltip>
           </div>
           <div className="right">
             <div className="inner">
@@ -182,7 +186,7 @@ class CoverLyric extends Component {
     if (this.state.lyricIndex !== prevState.lyricIndex) {
       let offsetY = Math.round(document.getElementById("cover-lyric").offsetHeight / 10).toFixed(1);
       this.setState({
-        translateY: -offsetY * (this.state.lyricIndex - 6) - this.state.top
+        translateY: -offsetY * (this.state.lyricIndex - 4) - this.state.top
       }, () => {
         let y = this.state.translateY;
         document.getElementById("translateY").style.transform =

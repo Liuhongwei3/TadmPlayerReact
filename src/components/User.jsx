@@ -131,7 +131,7 @@ class User extends Component {
                 </Tag>
               </Tooltip>
               <div>
-                <div><Tag color="purple">{this.state.username}</Tag> 创建的歌单</div>
+                <div>创建的歌单</div>
                 <Table columns={createColumns} dataSource={this.state.userDetailLists}
                        onRow={record => {
                          return {
@@ -149,14 +149,13 @@ class User extends Component {
                        }}/>
               </div>
               <div>
-                <div><Tag color="lime">{this.state.username}</Tag> 的关注</div>
+                <div>关注</div>
                 <Table columns={followColumns} dataSource={this.state.followLists}
                        onRow={record => {
                          return {
                            onClick: () => {
-                             console.log(record)
-                             // this.$store.commit('updateSingerName', name);
-                             // this.$router.push('/singer');
+                            //  this.$store.commit('updateSingerName', record.name);
+                            //  this.$router.push('/singer');
                            }, // 点击行
                          };
                        }}/>

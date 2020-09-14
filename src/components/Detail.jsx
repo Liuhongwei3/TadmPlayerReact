@@ -75,8 +75,8 @@ class Detail extends Component {
             </Tooltip>
           </div>
           {
-            this.state.description && <Collapse defaultActiveKey={['1']}>
-              <Panel header="歌单简介" key="1">
+            this.state.description && <Collapse>
+              <Panel header="歌单简介">
                 <p>{this.state.description}</p>
               </Panel>
             </Collapse>

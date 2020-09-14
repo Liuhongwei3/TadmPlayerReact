@@ -25,6 +25,7 @@ import Top from "./Top";
 import Search from "./Search";
 
 import {web_name, song_id, detail_id} from '../initData.json';
+import {topContext} from '../contexts';
 
 class Home extends Component {
   constructor(props) {
@@ -73,6 +74,9 @@ class Home extends Component {
                   <About/>
                 </Route>
                 <Route exact path="/top">
+                {/* <topContext.Provider value={this.updateDetailId}>
+                  <Top />
+                </topContext.Provider> */}
                   <Top updateDetailId={id => this.updateDetailId(id)}/>
                 </Route>
                 <Route exact path="/hotDetail">

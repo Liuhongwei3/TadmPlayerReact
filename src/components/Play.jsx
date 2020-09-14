@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {message, Tooltip} from 'antd';
 
 import {musicUrl} from "../network/ReqUrl";
-import {timeFormat} from "../util";
+import {timeFormat,shuffle} from "../util";
 
 import '../css/play.css'
 
@@ -107,13 +107,8 @@ class Play extends Component {
     });
     this.changeListState();
     this.setState({
-      randomList: [...this.state.detailList]
+      randomList: shuffle(this.state.detailList)
     }, () => {
-      let i = this.state.randomList.length;
-      while (i) {
-        let j = Math.floor(Math.random() * i--);
-        [this.state.randomList[j], this.state.randomList[i]] = [this.state.randomList[i], this.state.randomList[j]];
-      }
       this.setState({
         detailList: this.state.randomList
       })

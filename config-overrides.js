@@ -19,7 +19,7 @@ module.exports = override(
         '@': path.resolve(__dirname, 'src'),
     }),
     (config) => {
-        if (process.env.NODE_ENV === "production") config.devtool = false; // 生产环境打包去掉 map 
+        config.devtool = false; // 生产环境打包去掉 map 
         return config;
     }
 );
